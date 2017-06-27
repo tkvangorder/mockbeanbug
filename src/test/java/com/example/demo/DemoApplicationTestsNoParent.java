@@ -22,8 +22,7 @@ public class DemoApplicationTestsNoParent {
 	
 	@Test
 	public void testHello() {
-		//The following line will result in a null pointer exception because the "bar" mock bean is not being autowired
-		//into the test class when we extend AbstractTransactionalJUnit4SpringContextTests
+		//This will work correct because there is no parent.
 		when(bar.getName()).thenReturn("Joe");
 		
 		System.out.println(foo.sayHello());

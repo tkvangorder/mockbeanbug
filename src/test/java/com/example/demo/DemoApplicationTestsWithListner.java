@@ -26,8 +26,7 @@ public class DemoApplicationTestsWithListner extends AbstractTransactionalJUnit4
 	
 	@Test
 	public void testHello() {
-		//The following line will result in a null pointer exception because the "bar" mock bean is not being autowired
-		//into the test class when we extend AbstractTransactionalJUnit4SpringContextTests
+		//This will work correctly because we are explicitly adding the execution listener.
 		when(bar.getName()).thenReturn("Joe");
 		
 		System.out.println(foo.sayHello());
